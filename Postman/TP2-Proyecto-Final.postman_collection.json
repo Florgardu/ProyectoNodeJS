@@ -1,0 +1,318 @@
+{
+	"info": {
+		"_postman_id": "dc9b9923-3853-4045-b406-ad47ebc4c29f",
+		"name": "TP2-Proyecto-Final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Iniciar Sesion",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n         \"email\" : \"admin@prueba.com\",\n         \"password\": \"somePassword\"\n}"
+						},
+						"url": "http://localhost:3000/users/login",
+						"description": "Iniciar Sesión y obtener token"
+					},
+					"response": []
+				},
+				{
+					"name": "Registrarse",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmOTYwMzg2OTI5N2FhZTdkOTMzOTcwNCIsImlhdCI6MTYwMzY2Njg0MSwiZXhwIjoxNjA0MjcxNjQxfQ.ZZoZznWoFIWEweU_mZHlvodFGIJfu6ew6WX62PMdGA8",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\t\"username\" : \"uprueba\",\n         \"email\" : \"usuario@prueba.com\",\n         \"password\": \"somePassword\"\n}"
+						},
+						"url": "http://localhost:3000/users/signin",
+						"description": "Registarse como usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n         \"email\" : \"usuario@prueba.com\",\n         \"password\": \"somePassword\"\n}"
+						},
+						"url": "http://localhost:3000/users/5facafb9f2945052cc9d687e",
+						"description": "Iniciar Sesión y obtener token"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "productos",
+			"item": [
+				{
+					"name": "Get productos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTg2Yjc4OWM0NDIzMGRhNDY5MGFhNyIsInJvbCI6ImFkbWluIiwiaWF0IjoxNjA2Njg0NzY3LCJleHAiOjE2MDcyODk1Njd9.WK6a6GoHrvsIV9oZNMWlLJnLRHLsOCrD-k_FW8Ov3pM"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "http://localhost:3000/products/"
+					},
+					"response": []
+				},
+				{
+					"name": "Get productos by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTg2Yjc4OWM0NDIzMGRhNDY5MGFhNyIsInJvbCI6ImFkbWluIiwiaWF0IjoxNjA2Njg0NzY3LCJleHAiOjE2MDcyODk1Njd9.WK6a6GoHrvsIV9oZNMWlLJnLRHLsOCrD-k_FW8Ov3pM"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "http://localhost:3000/products/5fb186f77cfe1a3b054b8f4f"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTg2Yjc4OWM0NDIzMGRhNDY5MGFhNyIsInJvbCI6ImFkbWluIiwiaWF0IjoxNjA2Njg0NzY3LCJleHAiOjE2MDcyODk1Njd9.WK6a6GoHrvsIV9oZNMWlLJnLRHLsOCrD-k_FW8Ov3pM"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"descripcion\": \"Puerta Chapa\",\n\"precio\" : 3500 , \n\"marca\" :\"FIAT\"\n}"
+						},
+						"url": "http://localhost:3000/products/"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTg2Yjc4OWM0NDIzMGRhNDY5MGFhNyIsInJvbCI6ImFkbWluIiwiaWF0IjoxNjA2Njg0NzY3LCJleHAiOjE2MDcyODk1Njd9.WK6a6GoHrvsIV9oZNMWlLJnLRHLsOCrD-k_FW8Ov3pM"
+							}
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \"descripcion\": \"PUERTA DE CARTON\",\n        \"precio\": 250,\n        \"marca\": \"Fiat\"\n}"
+						},
+						"url": "http://localhost:3000/products/5fc410d43852970a2458ef45"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar un producto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "http://localhost:3000/products/5fa34bf389a21c3f01264091"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pedidos",
+			"item": [
+				{
+					"name": "Get pedidos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTg2Yjc4OWM0NDIzMGRhNDY5MGFhNyIsInJvbCI6ImFkbWluIiwiaWF0IjoxNjA2Njg0NzY3LCJleHAiOjE2MDcyODk1Njd9.WK6a6GoHrvsIV9oZNMWlLJnLRHLsOCrD-k_FW8Ov3pM"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "http://localhost:3000/pedidos/"
+					},
+					"response": []
+				},
+				{
+					"name": "Get pedidos by userId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTg2Yjc4OWM0NDIzMGRhNDY5MGFhNyIsInJvbCI6ImFkbWluIiwiaWF0IjoxNjA2Njg0NzY3LCJleHAiOjE2MDcyODk1Njd9.WK6a6GoHrvsIV9oZNMWlLJnLRHLsOCrD-k_FW8Ov3pM"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/pedidos/?userId=5fa86b789c44230da4690aa7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"pedidos",
+								""
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "5fa86b789c44230da4690aa7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get pedidos by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTg2Yjc4OWM0NDIzMGRhNDY5MGFhNyIsInJvbCI6ImFkbWluIiwiaWF0IjoxNjA2Njg0NzY3LCJleHAiOjE2MDcyODk1Njd9.WK6a6GoHrvsIV9oZNMWlLJnLRHLsOCrD-k_FW8Ov3pM"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "http://localhost:3000/pedidos/5faee739f16cd04f34a001e9"
+					},
+					"response": []
+				},
+				{
+					"name": "Create pedido",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTg2Yjc4OWM0NDIzMGRhNDY5MGFhNyIsInJvbCI6ImFkbWluIiwiaWF0IjoxNjA2Njg0NzY3LCJleHAiOjE2MDcyODk1Njd9.WK6a6GoHrvsIV9oZNMWlLJnLRHLsOCrD-k_FW8Ov3pM"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idCustomer\": \"5facafb9f2945052cc9d687e\",\n    \"productos\": [\n        {\n            \"cantidad\": 10,\n            \"producto\": {\n                \"_id\": \"5fb186f77cfe1a3b054b8f4d\",\n                \"marca\": \"RENAULT\",\n                \"descripcion\": \"PANEL DEL/DER RENAULT-12 GRIS\",\n                \"precio\": \"1234\"\n            }\n        }\n    ]\n}"
+						},
+						"url": "http://localhost:3000/pedidos/"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete pedido",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTg2Yjc4OWM0NDIzMGRhNDY5MGFhNyIsInJvbCI6ImFkbWluIiwiaWF0IjoxNjA2Njg0NzY3LCJleHAiOjE2MDcyODk1Njd9.WK6a6GoHrvsIV9oZNMWlLJnLRHLsOCrD-k_FW8Ov3pM"
+							}
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "http://localhost:3000/pedidos/5fc41bc4b444230ce829d4d3"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
